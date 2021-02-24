@@ -2,3 +2,4 @@ proyecto/*
 MyData/settings.py
 MyData/MyData/__pycache__/
 MyData/db.sqlite3
+MyData/static/img/*

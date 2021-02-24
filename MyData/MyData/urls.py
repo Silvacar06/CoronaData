@@ -20,4 +20,6 @@ from users import views as users_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('users/', users_views.prueba)
 ]
+ 
