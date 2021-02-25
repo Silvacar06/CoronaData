@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from getdata import views as getdata_views
 from users import views as users_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,9 +29,10 @@ urlpatterns = [
     path('testAPI/GetLatestCountryDataBycode/', getdata_views.GetLatestCountryDataBycode, name = "test_GetLatestCountryDataBycode"),
     path('testAPI/GetDailyReportByCountryCode/', getdata_views.GetDailyReportByCountryCode, name = "test_GetDailyReportByCountryCode"),
     path('testAPI/getListOfCounties/', getdata_views.ListCountires, name="List_Countries" ),
+    path('testAPI/GetTotalsWeek/', getdata_views.GetTotalsWeek, name="GetTotalsWeek" ),
 
     path('users/login/', users_views.login_view, name = 'login_view'),
     path('users/logout/', users_views.logout_view , name = 'logout_view'),
     path('users/singup/', users_views.singup_view, name = 'singup_view'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
  

@@ -1,33 +1,13 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg fixed-top" id="main-navbar">
-    <div class="container">
-
-        <a class="navbar-brand pr-5" style="border-right: 1px solid #efefef;" href="">
-            <img src="{% static "img/instagram.png" %}" height="45" class="d-inline-block align-top"/>
-        </a>
-
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-
-                <li class="nav-item">
-                    <a href="">
-                        <img src="{% static 'img/default-profile.png' %}" height="35" class="d-inline-block align-top rounded-circle"/>
-                    </a>
-                </li>
-
-                <li class="nav-item nav-icon">
-                    <a href="">
-                        <i class="fas fa-plus"></i>
-                    </a>
-                </li>
-
-                <li class="nav-item nav-icon">
-                    <a href="">
-                        <i class="fas fa-sign-out-alt"></i>
-                    </a>
-                </li>
-
-            </ul>
-        </div>
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">
+        <img src="{% static 'img/logo.png' %} " style="height: 35px;" class="d-inline-block align-top" />
+      </span>
+      <div class="navbar-nav" id="navbarSupportedContent">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout_view' %}">Salir</a>
+        </li>
     </div>
-</nav>
+    </div>
+  </nav>

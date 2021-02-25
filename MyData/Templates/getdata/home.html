@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Titulo de prueba</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aut esse vitae eligendi eum ea unde laborum veritatis fugiat commodi rerum officiis, ducimus, ut ipsum praesentium est delectus. Illum, ducimus.</p>
-    <a href="{% url "logout_view" %}">Salir</a>
-</body>
-</html>
+{% extends "block.html" %}
+
+{% block head_content %}
+<title>Titulo de prueba</title>
+{% endblock %}
+
+
+{% block container %}
+<div class="d-flex flex-row bd-highlight mb-3">
+    <div class="p-2 flex-fill bd-highlight" style="text-align: center;">Confirmados</div>
+    <div class="p-2 flex-fill bd-highlight" style="text-align: center;">Recuperados</div>
+    <div class="p-2 flex-fill bd-highlight" style="text-align: center;">Muertes</div>
+    <div class="p-2 flex-fill bd-highlight" style="text-align: center;">Activos</div>
+    <div class="p-2 flex-fill bd-highlight" style="text-align: center;">Criticos</div>
+</div>
+{% endblock %}
