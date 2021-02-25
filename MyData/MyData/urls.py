@@ -20,6 +20,12 @@ from users import views as users_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', users_views.prueba)
+    path('users/', users_views.prueba),
+    
+    path('getdata/', getdata_views.Dashboard, name='Dashboard'),
+
+    path('users/login/', users_views.login_view, name = 'login_view'),
+    path('users/logout/', users_views.logout_view , name = 'logout_view'),
+    path('users/singup/', users_views.singup_view, name = 'singup_view'),
 ]
  

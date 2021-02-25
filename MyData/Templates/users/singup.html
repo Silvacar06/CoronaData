@@ -1,0 +1,32 @@
+{% extends "users/home.html" %}
+
+{% block head_content %}
+<title>CoronaData SingUp</title>
+{% endblock %}
+
+{% block container %}
+
+<form action="{% url 'singup_view' %}" action="POST">
+    <div class="form-group">
+        <input type="text" placeholder="Username" required="true" name="username">
+    </div>
+    <div class="form-group">
+        <input type="password" placeholder="Password" required="true" name="passwd">
+    </div>
+    <div class="form-group">
+        <input type="password" placeholder="Confirm Password" required="true" name="paswd_conf">
+    </div>
+    <div class="form-group">
+        <input type="text" placeholder="First name" required="true" name="first_name">
+    </div>
+    <div class="form-group">
+        <input type="text" placeholder="Last name" required="true" name="last_name">
+    </div>
+    <div class="form-group">
+        <input type="email" placeholder="Email address" required="true" name="email">
+    </div>
+
+    <button class="btn btn prymary" type="submit">Crea tu usuario!!</button>
+</form>
+
+{% endblock %}
