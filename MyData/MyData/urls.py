@@ -23,6 +23,10 @@ urlpatterns = [
     path('users/', users_views.prueba),
     
     path('getdata/', getdata_views.Dashboard, name='Dashboard'),
+    path('testAPI/getDailyReportTotals/', getdata_views.GetDailyReportsTotals, name = "test_getDailyReportTotals"),
+    path('testAPI/GetLatestCountryDataBycode/', getdata_views.GetLatestCountryDataBycode, name = "test_GetLatestCountryDataBycode"),
+    path('testAPI/GetDailyReportByCountryCode/', getdata_views.GetDailyReportByCountryCode, name = "test_GetDailyReportByCountryCode"),
+    path('testAPI/getListOfCounties/', getdata_views.ListCountires, name="List_Countries" ),
 
     path('users/login/', users_views.login_view, name = 'login_view'),
     path('users/logout/', users_views.logout_view , name = 'logout_view'),
