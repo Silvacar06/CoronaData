@@ -6,7 +6,16 @@
 
 {% block container %}
 
-<form action="{% url 'singup_view' %}" action="POST">
+{% if error %}
+    <div class="block">
+        <p class="alert alert-danger">{{ error }}</p>
+    </div>
+{% endif %}
+
+<form action="{% url 'singup_view' %}" method="POST">
+    
+    {% csrf_token %}
+
     <div class="form-group">
         <input type="text" placeholder="Username" required="true" name="username">
     </div>
