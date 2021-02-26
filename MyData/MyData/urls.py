@@ -30,6 +30,7 @@ urlpatterns = [
     path('testAPI/GetDailyReportByCountryCode/', getdata_views.GetDailyReportByCountryCode, name = "test_GetDailyReportByCountryCode"),
     path('testAPI/getListOfCounties/', getdata_views.ListCountires, name="List_Countries" ),
     path('testAPI/GetTotalsWeek/', getdata_views.GetTotalsWeek, name="GetTotalsWeek" ),
+    path('/GetCountries/', getdata_views.GetCountries, name="GetCountries" ),
 
     path('users/login/', users_views.login_view, name = 'login_view'),
     path('users/logout/', users_views.logout_view , name = 'logout_view'),

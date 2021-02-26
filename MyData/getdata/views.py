@@ -10,6 +10,9 @@ import time, datetime
 
 rapidapiKey = '724911062emshcc04191f9454015p1ff70cjsne1c328cbcabf'
 
+def GetCountries(request):
+    import pdb; pdb.set_trace()
+    return HttpResponse("HolaMundo")
 
 def GetTotalsWeek(request):
     # x = datetime.datetime.now() 
