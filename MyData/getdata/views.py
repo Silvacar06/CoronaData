@@ -2,9 +2,9 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 import requests
 from django.http import HttpResponse
-import json
 from getdata.models import Country
-import time, datetime
+import time, datetime, json
+
 
 # Create your views here.
 

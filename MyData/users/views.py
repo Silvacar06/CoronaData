@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.db.utils import IntegrityError
 
 # Create your views here.
 def singup_view(request):
@@ -11,13 +12,16 @@ def singup_view(request):
         vefirpass = request.POST['paswd_conf']
         if password != vefirpass:
             return render(request, 'users/singup.html', {'error':'La contraseña debe coinicidir!!'})
-        first_name = request.POST['first_name']
-        last_name = request.POST['last_name']
-        email = request.POST['email']
-        user = User.objects.create_user(username=username, password = password)
-        user.first_name = first_name
-        user.last_name = last_name
-        user.email = email
+
+        try:
+            user = User.objects.create_user(username=username, password = password)
+        except IntegrityError:
+            return render(request, 'users/singup.html', {'error':'Username is already in use'})
+
+        # Salvado adicional de datos si todo OK
+        user.first_name = request.POST['first_name']
+        user.last_name = request.POST['last_name']
+        user.email = request.POST['email']
         user.save()
         return redirect('login_view')
     return render(request, 'users/singup.html')
