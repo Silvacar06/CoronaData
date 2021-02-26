@@ -1,0 +1,45 @@
+{% extends "block.html" %}
+
+{% block head_content %}
+<title>Titulo de prueba</title>
+{% endblock %}
+
+
+{% block container %}
+<div class="d-flex flex-row bd-highlight mb-3" style="border-radius: 100px;border-color: black;">
+    <div class="p-2 card flex-fill bd-highlight" style="text-align: center;">Confirmados</div>
+    <div class="p-2 card flex-fill bd-highlight" style="text-align: center;">Recuperados</div>
+    <div class="p-2 card flex-fill bd-highlight" style="text-align: center;">Muertes</div>
+    <div class="p-2 card flex-fill bd-highlight" style="text-align: center;">Activos</div>
+    <div class="p-2 card flex-fill bd-highlight" style="text-align: center;">Criticos</div>
+</div>
+<div class="d-flex flex-row bd-highlight mb-3">
+    <div class="card card-body flex-fill">
+        <h4 style="align-self: center;">Casos de la última semana</h4>
+        Este es el comportamiento del COVID-19 durante la última semana:
+
+        <!-- <form action="{% url 'GetCountries' %}" method="GET">
+            {% csrf_token %}
+            <input type="submit" value="OK">
+        </form> -->
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Selecciona el país
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="card card-body flex-fill">
+        <h4 style="align-self: center;">Casos por países</h4>
+        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user
+        activates the relevant trigger.
+    </div>
+</div>
+{% endblock %}

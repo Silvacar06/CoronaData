@@ -1,0 +1,41 @@
+{% extends "users/home.html" %}
+
+{% block head_content %}
+<title>CoronaData SingUp</title>
+{% endblock %}
+
+{% block container %}
+
+{% if error %}
+    <div class="block">
+        <p class="alert alert-danger">{{ error }}</p>
+    </div>
+{% endif %}
+
+<form action="{% url 'singup_view' %}" method="POST">
+    
+    {% csrf_token %}
+
+    <div class="input-group mb-3">
+        <input type="text" placeholder="Username" required="true" name="username" style="width: 100%;">
+    </div>
+    <div class="input-group mb-3">
+        <input type="password" placeholder="Password" required="true" name="passwd" style="width: 100%;">
+    </div>
+    <div class="input-group mb-3">
+        <input type="password" placeholder="Confirm Password" required="true" name="paswd_conf" style="width: 100%;">
+    </div>
+    <div class="input-group mb-3">
+        <input type="text" placeholder="First name" required="true" name="first_name" style="width: 100%;">
+    </div>
+    <div class="input-group mb-3">
+        <input type="text" placeholder="Last name" required="true" name="last_name" style="width: 100%;">
+    </div>
+    <div class="input-group mb-3">
+        <input type="email" placeholder="Email address" required="true" name="email" style="width: 100%;">
+    </div>
+
+    <button class="btn btn-primary btn-lg" type="submit" style="width: 100%;">Crea tu usuario!!</button>
+</form>
+
+{% endblock %}

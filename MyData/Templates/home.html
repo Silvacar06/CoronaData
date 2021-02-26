@@ -1,0 +1,15 @@
+{% load static %}
+<nav class="navbar navbar-light bd-light">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">
+        <img src="{% static 'img/logo.png' %} " style="height: 35px;" class="d-inline-block align-top" />
+      </span>
+      <div class="navbar-nav" id="navbarSupportedContent">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout_view' %}">
+              <i class="fas fa-sign-out-alt" ></i>
+            </a>
+        </li>
+    </div>
+    </div>
+  </nav>

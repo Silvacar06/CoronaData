@@ -1,0 +1,20 @@
+{% extends "users/home.html"%}
+
+{% block head_content %}
+<title>Corona data Log In</title>
+{% endblock %}
+
+{% block container %}
+
+{% if error %}
+<p style="color: red">{{error}}</p>
+{% endif %}
+
+<form method="POST" action="{% url 'login_view' %}">
+    {% csrf_token %}
+    <div class="input-group mb-3"><input type="text" placeholder="Username" name="username" style="width: 100%;"></div>
+    <div class="input-group mb-3"><input type="password" placeholder="password" name="password" style="width: 100%;"></div>
+    <button class="btn btn-primary btn-lg" type="submit" style="width: 100%;">Ingresar</button>
+</form>
+
+{% endblock %}
